@@ -154,3 +154,16 @@ Debe:
 
 Si eres capaz de resolver correctamente este ejercicio, estás preparado para el examen.
 
+## Ampliación de ejercicio
+
+- Implementa un método que elimine un entrenador que recibe
+
+  `public Entrenador deleteEntrenador(Entrenador entrenador)`
+
+- Implementa un método que elimine un entrenador del que recibe un id
+
+  `public Entrenador deleteEntrenador(int id)`
+
+- Implementa un método ordene los entrenadores según sus id de mayor a menor, sin dejar huecos libres
+
+  `public void ordenarEntrenadores()`
