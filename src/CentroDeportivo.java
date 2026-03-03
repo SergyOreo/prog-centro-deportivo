@@ -49,13 +49,31 @@ public class CentroDeportivo {
         Entrenador entrenador = null;
 
         for (int i = 0; i < this.NUM_MAX_ENTRENADORES && seguirBuscando; i++) {
-            if (entrenadores[i].getId() == id) {
+            if (entrenadores[i] != null && entrenadores[i].getId() == id) {
                 seguirBuscando = false;
                 entrenador = entrenadores[i];
             }
         }
 
         return entrenador;
+    }
+
+    /**
+     * Encuentra primer hueco libre dentro de la lista de entrenadores
+     * @return posicion del primer hueco libre, -1 si no hay hueco
+     */
+    private int buscarPrimerHuecoLibre(){
+        boolean seguirBuscando = true;
+        int primerHuecoLibre = -1;
+
+        for (int i = 0; i < this.NUM_MAX_ENTRENADORES && seguirBuscando; i++) {
+            if (entrenadores[i] == null) {
+                primerHuecoLibre = i;
+                seguirBuscando = false;
+            }
+        }
+
+        return primerHuecoLibre;
     }
 
 }
