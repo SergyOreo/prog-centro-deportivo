@@ -114,4 +114,20 @@ public class CentroDeportivo {
         return sb.toString();
     }
 
+    /**
+     * Cuenta el total de entrenadores que hay en el centro
+     * @return int total de entrenadores
+     */
+    public int contarEntrenadores(){
+        int contador = 0;
+
+        for (int i = 0; i < this.NUM_MAX_ENTRENADORES; i++) {
+            if (entrenadores[i] != null) {
+                contador++;
+            }
+        }
+
+        return contador;
+    }
+
 }
