@@ -18,8 +18,23 @@
  * Esta clase actúa como contenedor y gestiona la lógica de almacenamiento
  * y acceso a los objetos {@link Entrenador}.
  *
- * @author Luis García Sánchez
+ * @author Qi Wang
  * @version 1.0
  */
 public class CentroDeportivo {
+    private Entrenador[] entrenadores;
+    private final int NUM_MAX_ENTRENADORES;
+
+    public CentroDeportivo(int num_max_entrenadores) {
+        if (num_max_entrenadores > 0) {
+            this.NUM_MAX_ENTRENADORES = num_max_entrenadores;
+        } else  {
+            this.NUM_MAX_ENTRENADORES = 100;
+        }
+
+        entrenadores = new Entrenador[this.NUM_MAX_ENTRENADORES];
+    }
+
+
+
 }
