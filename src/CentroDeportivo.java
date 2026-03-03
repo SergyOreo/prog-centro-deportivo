@@ -96,4 +96,22 @@ public class CentroDeportivo {
         return entrenadorRegistrado;
     }
 
+    /**
+     * Muestra en pantalla todos los entrenadores y sus atributos que están en la lista de entrenadores
+     * @return String del listado de Entrenadores
+     */
+    public String mostrarEntrenadores(){
+        StringBuilder sb = new StringBuilder("Entrenadores {\n");
+
+        for (int i = 0; i < this.NUM_MAX_ENTRENADORES; i++) {
+            if (entrenadores[i] != null) {
+                sb.append(entrenadores[i].toString());
+                sb.append("\n");
+            }
+        }
+        sb.append("}");
+
+        return sb.toString();
+    }
+
 }
