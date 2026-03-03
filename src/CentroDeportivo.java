@@ -25,6 +25,10 @@ public class CentroDeportivo {
     private Entrenador[] entrenadores;
     private final int NUM_MAX_ENTRENADORES;
 
+    /**
+     * Constructor de clase CentroDeportivo
+     * @param num_max_entrenadores capacidad máxima de entrenadores
+     */
     public CentroDeportivo(int num_max_entrenadores) {
         if (num_max_entrenadores > 0) {
             this.NUM_MAX_ENTRENADORES = num_max_entrenadores;
@@ -35,6 +39,23 @@ public class CentroDeportivo {
         entrenadores = new Entrenador[this.NUM_MAX_ENTRENADORES];
     }
 
+    /**
+     * Dado su identificador, busca el entrenador que coincida con dicho id entre la lista de entrenadores
+     * @param id identificador del entrenador a buscar
+     * @return Entrenador con el id proporcionado, null si no se ha encontrado
+     */
+    public Entrenador buscarEntrenador(int id){
+        boolean seguirBuscando = true;
+        Entrenador entrenador = null;
 
+        for (int i = 0; i < this.NUM_MAX_ENTRENADORES && seguirBuscando; i++) {
+            if (entrenadores[i].getId() == id) {
+                seguirBuscando = false;
+                entrenador = entrenadores[i];
+            }
+        }
+
+        return entrenador;
+    }
 
 }
